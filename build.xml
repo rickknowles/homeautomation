@@ -1,3 +1,4 @@
+<!DOCTYPE project> 
 <project name="jarvis" default="war" basedir=".">
   <property environment="env"/>  
   
