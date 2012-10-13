@@ -34,9 +34,11 @@ public class RFXtrxController implements ControlChannel, Callable<Void>, SerialP
     }
     
     public void showOpenSerialPorts() {
+    	log.info("Scanning for open serial ports");
         Enumeration<?> e = CommPortIdentifier.getPortIdentifiers();
         while (e.hasMoreElements()) {
             CommPortIdentifier port = (CommPortIdentifier) e.nextElement();
+            log.info("Port: " + port.getName());
             if (port.getPortType() == CommPortIdentifier.PORT_SERIAL && !port.isCurrentlyOwned()) {
                 log.info("Serial port: " + port.getName());
             }
